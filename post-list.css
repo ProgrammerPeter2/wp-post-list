@@ -1,4 +1,4 @@
-.post-list {
+.post_item {
     width: 750px;
     display: flex;
     justify-content: center;
@@ -9,6 +9,7 @@
     max-height: 200px !important;
 }
 
-.post-info {
+.post_info {
     display: block;
+    margin-left: 10px;
 }

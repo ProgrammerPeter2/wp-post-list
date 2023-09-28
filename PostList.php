@@ -10,7 +10,7 @@ class PostList{
     }
 
     public function init_home(){
-        wp_enqueue_style('post-list', __DIR__."/post-list.css");
+        wp_enqueue_style('post-list', plugin_dir_url(__FILE__)."/post-list.css");
         add_shortcode('post_list', array($this, 'post_list_shortcode'));
     }
 
@@ -37,24 +37,29 @@ class PostList{
             $i = 0;
             while ($new_query->have_posts()) {
                 $new_query->the_post();
-                $postid = get_the_ID();
 				$thumb_url = get_the_post_thumbnail_url();
                 $title = get_the_title();
 				$excerpt = get_the_excerpt();
+                $link = get_permalink();
                 $row = <<<HTML
                     <div class="post_item">
                         <img src="{$thumb_url}" class="thumbnail"/>
                         <div class="post_info">
                             <h3>{$title}</h3>
                             <p>{$excerpt}</p>
-                            <button>Olvass tovább</button>
+                            <a href="{$link}"><button>Olvass tovább</button></a>
                         </div>
                     </div>
                 HTML;
 				$output .= $row;
             }
         }
-		return $output."</div>";
+        $output .= <<<HTML
+            <div class="more_info">
+
+            </div>
+        HTML;
+		return $output."</div>;
     }
 }
 
