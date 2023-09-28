@@ -6,10 +6,11 @@ Version: 1.0
 
 class PostList{
     public function __construct() {
-        add_action('init', array($this, 'register_shortcode'));
+        add_action('init', array($this, 'init_home'));
     }
 
-    public function register_shortcode(){
+    public function init_home(){
+        wp_enqueue_style('post-list', __DIR__."/post-list.css");
         add_shortcode('post_list', array($this, 'post_list_shortcode'));
     }
 
@@ -28,7 +29,7 @@ class PostList{
             array(
                 'post_type'         => 'post',
                 //'posts_per_page'    => $limit,
-                'category_name'     => $category->slug;
+                'category_name'     => $category->slug
             )
         );
         $output = '<div class="post_list">';
@@ -38,9 +39,16 @@ class PostList{
                 $new_query->the_post();
                 $postid = get_the_ID();
 				$thumb_url = get_the_post_thumbnail_url();
+                $title = get_the_title();
+				$excerpt = get_the_excerpt();
                 $row = <<<HTML
                     <div class="post_item">
-                        {$thumb_url}
+                        <img src="{$thumb_url}" class="thumbnail"/>
+                        <div class="post_info">
+                            <h3>{$title}</h3>
+                            <p>{$excerpt}</p>
+                            <button>Olvass tovább</button>
+                        </div>
                     </div>
                 HTML;
 				$output .= $row;

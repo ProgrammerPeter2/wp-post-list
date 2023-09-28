@@ -1,0 +1,14 @@
+.post-list {
+    width: 750px;
+    display: flex;
+    justify-content: center;
+}
+
+.thumbnail {
+    max-width: 300px !important;
+    max-height: 200px !important;
+}
+
+.post-info {
+    display: block;
+}
