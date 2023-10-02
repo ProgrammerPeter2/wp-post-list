@@ -10,7 +10,8 @@ class PostList{
     }
 
     public function init_home(){
-        wp_enqueue_style('post-list', plugin_dir_url(__FILE__)."/post-list.css");
+        $style_filename = (wp_is_mobile()) ? "post-list-mobile" : "post-list";
+        wp_enqueue_style('post-list', plugin_dir_url(__FILE__)."/$style_filename.css");
         add_shortcode('post_list', array($this, 'post_list_shortcode'));
     }
 

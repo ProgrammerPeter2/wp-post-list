@@ -1,0 +1,16 @@
+.post_list {
+    display: grid;
+    justify-content: center;
+    max-width: 350px;
+}
+
+.post_item {
+    display: block;
+    max-width: inherit;
+}
+
+.thumbnail {
+    max-width: 250px !important;
+    max-height: 200px !important;
+}
+

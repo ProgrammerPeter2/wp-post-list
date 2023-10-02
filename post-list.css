@@ -13,3 +13,8 @@
     display: block;
     margin-left: 10px;
 }
+
+.post_list {
+    display: grid;
+    justify-content: center;
+}
