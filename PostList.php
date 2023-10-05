@@ -25,11 +25,12 @@ class PostList{
         $category = get_category_by_slug($atts["category"]);
         if(!$category) return $this->get_error_msg("Hibás kategória slug!");
         $limit = (isset($atts["limit"])) ? intval($atts["limit"]) : 3;
+        $category_link = get_category_link($category);
         // query the posts
         $new_query = new WP_Query(
             array(
                 'post_type'         => 'post',
-                //'posts_per_page'    => $limit,
+                'posts_per_page'    => $limit,
                 'category_name'     => $category->slug
             )
         );
@@ -59,10 +60,10 @@ class PostList{
         }
         $output .= <<<HTML
             <div class="more_info">
-
+                <a href="{$category_link}"><button>További programok</button></a>
             </div>
         HTML;
-		return $output."</div>;
+		return $output."</div>";
     }
 }
 
