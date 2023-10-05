@@ -9,6 +9,10 @@
     max-height: 200px !important;
 }
 
+.thumb_holder {
+    max-width: 300px;
+}
+
 .post_info {
     display: block;
     margin-left: 10px;

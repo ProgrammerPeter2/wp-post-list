@@ -14,3 +14,7 @@
     max-height: 200px !important;
 }
 
+.thumb_holder{
+    display: flex;
+    justify-content: center;
+}

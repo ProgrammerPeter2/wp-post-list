@@ -44,7 +44,9 @@ class PostList{
                 $link = get_permalink();
                 $row = <<<HTML
                     <div class="post_item">
-                        <img src="{$thumb_url}" class="thumbnail"/>
+                        <div class="thumb_holder">
+                            <img src="{$thumb_url}" class="thumbnail"/>
+                        </div>
                         <div class="post_info">
                             <h3>{$title}</h3>
                             <p>{$excerpt}</p>
