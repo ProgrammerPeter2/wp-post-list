@@ -51,7 +51,7 @@ class PostList{
                         <div class="post_info">
                             <h3>{$title}</h3>
                             <p>{$excerpt}</p>
-                            <a href="{$link}"><button>Olvass tovább</button></a>
+                            <a href="{$link}"><button class="button">Olvass tovább</button></a>
                         </div>
                     </div>
                 HTML;
@@ -60,7 +60,7 @@ class PostList{
         }
         $output .= <<<HTML
             <div class="more_info">
-                <a href="{$category_link}"><button>További programok</button></a>
+                <a href="{$category_link}"><button class="button">További programok</button></a>
             </div>
         HTML;
 		return $output."</div>";

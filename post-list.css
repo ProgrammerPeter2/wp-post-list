@@ -27,3 +27,11 @@
     display: flex;
     justify-content: center;
 }
+
+.button{
+    background: #966f3d;
+    border-color: #966f3d;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: none;
+}
