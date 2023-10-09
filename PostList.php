@@ -34,7 +34,7 @@ class PostList{
                 'category_name'     => $category->slug
             )
         );
-        $output = '<div class="post_list">';
+        $output = '<div class="post_list_holder"><div class="post_list">';
         if ($new_query->have_posts()) {
             $i = 0;
             while ($new_query->have_posts()) {
@@ -63,7 +63,7 @@ class PostList{
                 <a href="{$category_link}"><button class="button">További programok</button></a>
             </div>
         HTML;
-		return $output."</div>";
+		return $output."</div></div>";
     }
 }
 

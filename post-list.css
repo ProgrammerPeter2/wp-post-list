@@ -35,3 +35,9 @@
     text-decoration: none;
     text-shadow: none;
 }
+
+.post_list_holder {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}

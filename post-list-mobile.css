@@ -7,6 +7,7 @@
 .post_item {
     display: block;
     max-width: inherit;
+    padding: 15px;
 }
 
 .post_info{
@@ -37,8 +38,15 @@
 
 .button {
     background: #966f3d;
-    border-color: #966f3d;
+    border: none;
     color: #fff;
     text-decoration: none;
     text-shadow: none;
+}
+
+.post_list_holder {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 15px;
 }
