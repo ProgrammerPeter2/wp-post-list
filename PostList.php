@@ -46,7 +46,7 @@ class PostList{
                 $row = <<<HTML
                     <div class="post_item">
                         <div class="thumb_holder">
-                            <img src="{$thumb_url}" class="thumbnail"/>
+                            <a href="{$link}"><img src="{$thumb_url}" class="thumbnail"/></a>
                         </div>
                         <div class="post_info">
                             <h3>{$title}</h3>
